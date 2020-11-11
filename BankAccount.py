@@ -6,7 +6,7 @@ class BankAccount:
     #Set up the main function to get a name and balance
     def __init__(self, full_name):
         self.full_name = full_name
-        self.account_number = random.randint(10000000, 99999999)
+        self.account_number = str(random.randint(10000000, 99999999))
         self.routing_number = 62738412
         self.balance = 0
 
@@ -37,7 +37,7 @@ class BankAccount:
     def print_receipt(self):
         print(f"""
         Name: {self.full_name}
-        Account Number: {self.account_number}
+        Account Number: ****{self.account_number[4:9]}
         Routing Number: {self.routing_number}
         Balance: ${self.balance}
         """)
