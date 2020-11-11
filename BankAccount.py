@@ -1,12 +1,14 @@
 import random
 
+routing_number = 62738412
+
 class BankAccount:
     #Set up the main function to get a name and balance
-    def __init__(self, full_name, balance):
+    def __init__(self, full_name):
         self.full_name = full_name
         self.account_number = random.randint(10000000, 99999999)
         self.routing_number = 62738412
-        self.balance = balance
+        self.balance = 0
 
     #Set up the function to make a deposit
     def deposit(self, amount):
@@ -41,20 +43,29 @@ class BankAccount:
         """)
 
 #Make new account with name and balance
-new_account = BankAccount("Alex Shearer", 500)
+new_account = BankAccount("Alex Shearer")
 
-new_account.deposit(50)
+new_account.deposit(650)
 new_account.withdraw(375)
 new_account.print_receipt()
 new_account.withdraw(142)
+new_account.get_balance()
 
-account2 = BankAccount("Jane Doe", 1000)
+account2 = BankAccount("Jane Doe")
 
-account2.deposit(100)
+account2.deposit(1500)
 account2.withdraw(375)
 account2.get_balance()
 
 account2.print_receipt()
+
+account3 = BankAccount("Ryan Reynolds")
+account3.get_balance()
+account3.deposit(243)
+account3.print_receipt()
+account3.withdraw(50)
+account3.get_balance()
+
         
 
 
